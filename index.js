@@ -21,36 +21,58 @@ const songs = [
 
 
 // Object containing each Guardian's preferred genre
-const guardians = {
-    Benjamin: "Rock",
-    Puso: "Pop",
-    Mmathabo: "R&B",
-    Annastasia: "Rock",
-    Thabang: "Pop",
-    
-    // Add preferences for Drax, Rocket, and Groot
-    
+const guardians =[
 
-};
-
-guar.forEach(generatePlaylist => {
-    songs[index] = guar.property("");
     
-});
+        {name:"Benjamin", preference: "Rock"},
+        {name:"Puso", preference: "Pop"},
+        {name: "Mmathabo", preference: "R&B"},
+        {name: "Annastasia", preference: "Rock"},
+        {name: "Thabang", preference: "Pop"}
+        
+        
+        // Add preferences for Drax, Rocket, and Groot    
+];
+
+
+    
 
 // Function to generate playlist based on preferred genre
 function generatePlaylist(guardians, songs) {
     // Use the map() function to create playlists for each Guardian
     // Your code here
     
-    //const BenjaminPlaylist = guardians.map(playlist => playlist.genre);
-   // const AnnastasiaPlaylist = songs.map(playlist => playlist.genre);
-   // const MmathaboPlaylist = songs.map(playlist => playlist.genre);
-  //  const PusoPlaylist = songs.map(playlist => playlist.genre);
-//const ThabangPlaylist = songs.map(playlist => playlist.genre, );
-    //const  = catwomanGadgets.map(gadget => gadget.name);
     
-   // console.log("Benjamin's PlayList:", BenjaminPlaylist);
+    const generatePlaylist = (guardians, songs) => {
+        return guardians.map(guardians => {
+          const preferredgenre = songs.filter(song => song.genre === guardians.preference);
+          return { name: guardians.name, playlist: preferredgenre };
+        });
+      };
+      
+      const playlists = generatePlaylist(guardians, songs);
+      
+      console.log(playlists);
+
+
+
+
+
+
+
+
+
+   /* const BenjaminPlaylist = songs.map(playlist => playlist.genre );
+
+    console.log("Benjamin's PlayList:", BenjaminPlaylist);
+
+    const AnnastasiaPlaylist = songs.map(playlist => playlist.genre);
+    const MmathaboPlaylist = songs.map(playlist => playlist.genre);
+    const PusoPlaylist = songs.map(playlist => playlist.genre);
+    const ThabangPlaylist = songs.map(playlist => playlist.genre, );
+    //const  = catwomanGadgets.map(gadget => gadget.name);
+    */
+   
    // console.log("Annastasia's Playlist:", AnnastasiaPlaylist);
    // console.log("Mmathabo's Playlist:", MmathaboPlaylist);
    // console.log("Puso's Playlist:", PusoPlaylist);
@@ -59,7 +81,7 @@ function generatePlaylist(guardians, songs) {
   //  playlist.forEach((guardians) => console.log(guardians));
     
 
-}
+    };
 
 // Call generatePlaylist and display the playlists for each Guardian
 generatePlaylist(guardians, songs);
