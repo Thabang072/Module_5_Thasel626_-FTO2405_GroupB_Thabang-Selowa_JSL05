@@ -32,7 +32,7 @@ const guardians = [
 // Function to generate playlists based on preferred genre
 function generatePlaylist(guardians, songs) {
   const playlists = guardians.map(guardian => {
-      const preferredSongs = songs.filter(song => song.genre.toLowerCase() === guardian.preference.toLowerCase());
+      const preferredSongs = songs.filter(song => song.genre === guardian.preference);
       return { name: guardian.name, playlist: preferredSongs };
   });
 
